@@ -38,7 +38,6 @@ require (
 	github.com/gobuffalo/logger v1.0.7 // indirect
 	github.com/gobuffalo/meta v0.3.3 // indirect
 	github.com/gobuffalo/nulls v0.4.2 // indirect
-	github.com/gobuffalo/packd v1.0.2 // indirect
 	github.com/gobuffalo/plush/v4 v4.1.18 // indirect
 	github.com/gobuffalo/refresh v1.13.3 // indirect
 	github.com/gobuffalo/tags/v3 v3.1.4 // indirect
