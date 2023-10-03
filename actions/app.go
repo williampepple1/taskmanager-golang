@@ -66,6 +66,14 @@ func App() *buffalo.App {
 		// Remove to disable this.
 		app.Use(popmw.Transaction(models.DB))
 		app.GET("/", HomeHandler)
+		// app.go
+
+		app.GET("/tasks", TasksList)
+		app.GET("/tasks/{task_id}", TaskShow)
+		app.POST("/tasks", TaskCreate)
+		app.PUT("/tasks/{task_id}", TaskUpdate)
+		app.DELETE("/tasks/{task_id}", TaskDestroy)
+
 	})
 
 	return app

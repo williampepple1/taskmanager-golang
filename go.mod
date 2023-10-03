@@ -13,6 +13,7 @@ require (
 	github.com/gobuffalo/validate/v3 v3.3.3
 	github.com/gobuffalo/x v0.1.0
 	github.com/gofrs/uuid v4.3.1+incompatible
+	github.com/pkg/errors v0.9.1
 	github.com/rs/cors v1.10.1
 	github.com/unrolled/secure v1.13.0
 )
@@ -37,6 +38,7 @@ require (
 	github.com/gobuffalo/logger v1.0.7 // indirect
 	github.com/gobuffalo/meta v0.3.3 // indirect
 	github.com/gobuffalo/nulls v0.4.2 // indirect
+	github.com/gobuffalo/packd v1.0.2 // indirect
 	github.com/gobuffalo/plush/v4 v4.1.18 // indirect
 	github.com/gobuffalo/refresh v1.13.3 // indirect
 	github.com/gobuffalo/tags/v3 v3.1.4 // indirect
@@ -60,7 +62,7 @@ require (
 	github.com/luna-duclos/instrumentedsql v1.1.3 // indirect
 	github.com/mattn/go-colorable v0.1.9 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
-	github.com/mattn/go-sqlite3 v1.14.16 // indirect
+	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect
 	github.com/microcosm-cc/bluemonday v1.0.20 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/monoculum/formam v3.5.5+incompatible // indirect
