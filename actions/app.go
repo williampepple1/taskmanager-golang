@@ -68,11 +68,14 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 		app.GET("/", HomeHandler)
 		// app.go
+
+		// User routes
 		app.POST("/users/register", UserRegister)
 		app.POST("/users/login", UserLogin)
 		app.PUT("/users/{user_id}", middlewares.AuthorizeMiddleware(UserUpdate))
 		app.DELETE("/users/{user_id}", middlewares.AuthorizeMiddleware(UserDelete))
 
+		// Task routes
 		app.GET("/tasks", TasksList)
 		app.GET("/tasks/{task_id}", TaskShow)
 		app.POST("/tasks", TaskCreate)
