@@ -1,0 +1,6 @@
+create_table("blacklisted_tokens") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("token", "string", {})
+	t.Column("expires_at", "timestamp", {})
+	t.Timestamps()
+}

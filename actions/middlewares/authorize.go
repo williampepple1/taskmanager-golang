@@ -3,6 +3,7 @@ package middlewares
 import (
 	"errors"
 	"fmt"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
 	"github.com/golang-jwt/jwt"

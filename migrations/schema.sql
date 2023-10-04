@@ -21,6 +21,21 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: blacklisted_tokens; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.blacklisted_tokens (
+    id uuid NOT NULL,
+    token character varying(255) NOT NULL,
+    expires_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.blacklisted_tokens OWNER TO postgres;
+
+--
 -- Name: schema_migration; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -60,6 +75,14 @@ CREATE TABLE public.users (
 
 
 ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- Name: blacklisted_tokens blacklisted_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.blacklisted_tokens
+    ADD CONSTRAINT blacklisted_tokens_pkey PRIMARY KEY (id);
+
 
 --
 -- Name: schema_migration schema_migration_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
