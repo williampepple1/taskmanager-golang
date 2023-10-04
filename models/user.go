@@ -34,11 +34,28 @@ func (u Users) String() string {
 	return string(ju)
 }
 
+type UniqueEmailValidator struct {
+	Field string
+	Name  string
+	Tx    *pop.Connection
+}
+
+func (v *UniqueEmailValidator) IsValid(errors *validate.Errors) {
+	user := User{}
+	err := v.Tx.Where("email = ?", v.Field).First(&user)
+	if err == nil {
+		// If no error, an email already exists with that value.
+		errors.Add(validators.GenerateKey(v.Name), "Email is already taken.")
+	}
+}
+
 // Validate gets run every time you call a "pop.Validate*" (pop.ValidateAndSave, pop.ValidateAndCreate, pop.ValidateAndUpdate) method.
 // This method is not required and may be deleted.
 func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
 		&validators.StringIsPresent{Field: u.Email, Name: "Email"},
+		&validators.EmailIsPresent{Field: u.Email, Name: "Email"},
+		&UniqueEmailValidator{Field: u.Email, Name: "Email", Tx: tx},
 		&validators.StringIsPresent{Field: u.PasswordHash, Name: "PasswordHash"},
 	), nil
 }
