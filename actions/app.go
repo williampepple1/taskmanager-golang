@@ -3,7 +3,6 @@ package actions
 import (
 	"sync"
 
-	"taskmanager/actions/middlewares"
 	"taskmanager/locales"
 	"taskmanager/models"
 
@@ -68,10 +67,6 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 		app.GET("/", HomeHandler)
 		// app.go
-		app.POST("/users/register", UserRegister)
-		app.POST("/users/login", UserLogin)
-		app.PUT("/users/{user_id}", middlewares.AuthorizeMiddleware(UserUpdate))
-		app.DELETE("/users/{user_id}", middlewares.AuthorizeMiddleware(UserDelete))
 
 		app.GET("/tasks", TasksList)
 		app.GET("/tasks/{task_id}", TaskShow)
